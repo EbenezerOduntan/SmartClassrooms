@@ -1,7 +1,6 @@
 package user;
 
 import com.smartclassrooms.grpc.User.APIResponse;
-import com.smartclassrooms.grpc.User.Empty;
 import com.smartclassrooms.grpc.User.RegisterRequest;
 import com.smartclassrooms.grpc.userGrpc.userImplBase;
 
@@ -18,13 +17,18 @@ public class UserService extends userImplBase{
 		String password = request.getPassword();
 		
 		APIResponse.Builder response = APIResponse.newBuilder();
-		if(username.equals(password)) {
+		if(password.length() > 3 && username.length() > 0) {
 			//return success message
-			response.setResponseCode(0).setResponsemessage("SUCCESS");
+			response.setResponseCode(0).setResponsemessage("Student registered!");
 		}
+		else if(password.length() > 3) {
+			// return failure message
+						response.setResponseCode(100).setResponsemessage("No username entered. Try Again!");
+		}
+		
 		else {
 			// return failure message
-			response.setResponseCode(100).setResponsemessage("INVALID PASSWORD");
+			response.setResponseCode(100).setResponsemessage("Password too short. Try Again!");
 		}
 		
 		responseObserver.onNext(response.build());

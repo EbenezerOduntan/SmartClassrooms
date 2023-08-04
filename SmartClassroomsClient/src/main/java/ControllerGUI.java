@@ -21,6 +21,8 @@ import com.smartclassrooms.grpc.userGrpc.userBlockingStub;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.stub.MetadataUtils;
 
 
 public class ControllerGUI implements ActionListener{
@@ -111,14 +113,18 @@ public class ControllerGUI implements ActionListener{
 			/*
 			 * 
 			 */
+			Metadata metadata =  new Metadata();
+			metadata.put(Metadata.Key.of("HOSTNAME", Metadata.ASCII_STRING_MARSHALLER), "localhost:9090");
 			ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
 			userBlockingStub userStub = userGrpc.newBlockingStub(channel);
+			
 
 			//preparing message to send
 			RegisterRequest registerrequest = RegisterRequest.newBuilder().setUsername(entry1.getText()).setPassword(entry2.getText()).build();
 
 			//retrieving reply from service
 			APIResponse response = userStub.register(registerrequest);
+			userStub = MetadataUtils.attachHeaders(userStub, metadata);
 
 			reply1.setText( String.valueOf( response.getResponsemessage()));
 			
