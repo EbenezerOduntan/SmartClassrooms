@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package  = "com.smartclassrooms.grpc";
+
+service qanda {
+	rpc liveQandA(stream Question) returns (stream Answer);
+}
+
+message Question {
+	string request = 1;
+}
+
+message Answer {
+	string response = 1;
+}

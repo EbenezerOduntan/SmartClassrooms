@@ -28,9 +28,3 @@ message Grade {
 	string grade = 1;
 	string comment = 2;
 }
-
-
-message RegisterRequest { 
-	string username = 1;
-	string password = 2;
-}
