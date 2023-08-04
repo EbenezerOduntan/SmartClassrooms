@@ -4,13 +4,12 @@ option java_package  = "com.smartclassrooms.grpc";
 
 service user {
 	
-	rpc login (LoginRequest) returns (APIResponse);
-	rpc logout(Empty) returns (APIResponse);
+	rpc register (RegisterRequest) returns (APIResponse);
 	
 	
 }
 
-message LoginRequest { 
+message RegisterRequest { 
 	string username = 1;
 	string password = 2;
 }

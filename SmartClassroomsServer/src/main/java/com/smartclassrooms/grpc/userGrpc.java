@@ -27,68 +27,36 @@ public final class userGrpc {
   public static final String SERVICE_NAME = "user";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.LoginRequest,
-      com.smartclassrooms.grpc.User.APIResponse> getLoginMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.RegisterRequest,
+      com.smartclassrooms.grpc.User.APIResponse> getRegisterMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "login",
-      requestType = com.smartclassrooms.grpc.User.LoginRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "register",
+      requestType = com.smartclassrooms.grpc.User.RegisterRequest.class,
       responseType = com.smartclassrooms.grpc.User.APIResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.LoginRequest,
-      com.smartclassrooms.grpc.User.APIResponse> getLoginMethod() {
-    io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.LoginRequest, com.smartclassrooms.grpc.User.APIResponse> getLoginMethod;
-    if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.RegisterRequest,
+      com.smartclassrooms.grpc.User.APIResponse> getRegisterMethod() {
+    io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.RegisterRequest, com.smartclassrooms.grpc.User.APIResponse> getRegisterMethod;
+    if ((getRegisterMethod = userGrpc.getRegisterMethod) == null) {
       synchronized (userGrpc.class) {
-        if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
-          userGrpc.getLoginMethod = getLoginMethod = 
-              io.grpc.MethodDescriptor.<com.smartclassrooms.grpc.User.LoginRequest, com.smartclassrooms.grpc.User.APIResponse>newBuilder()
+        if ((getRegisterMethod = userGrpc.getRegisterMethod) == null) {
+          userGrpc.getRegisterMethod = getRegisterMethod = 
+              io.grpc.MethodDescriptor.<com.smartclassrooms.grpc.User.RegisterRequest, com.smartclassrooms.grpc.User.APIResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "user", "login"))
+                  "user", "register"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartclassrooms.grpc.User.LoginRequest.getDefaultInstance()))
+                  com.smartclassrooms.grpc.User.RegisterRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.smartclassrooms.grpc.User.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new userMethodDescriptorSupplier("login"))
+                  .setSchemaDescriptor(new userMethodDescriptorSupplier("register"))
                   .build();
           }
         }
      }
-     return getLoginMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.Empty,
-      com.smartclassrooms.grpc.User.APIResponse> getLogoutMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "logout",
-      requestType = com.smartclassrooms.grpc.User.Empty.class,
-      responseType = com.smartclassrooms.grpc.User.APIResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.Empty,
-      com.smartclassrooms.grpc.User.APIResponse> getLogoutMethod() {
-    io.grpc.MethodDescriptor<com.smartclassrooms.grpc.User.Empty, com.smartclassrooms.grpc.User.APIResponse> getLogoutMethod;
-    if ((getLogoutMethod = userGrpc.getLogoutMethod) == null) {
-      synchronized (userGrpc.class) {
-        if ((getLogoutMethod = userGrpc.getLogoutMethod) == null) {
-          userGrpc.getLogoutMethod = getLogoutMethod = 
-              io.grpc.MethodDescriptor.<com.smartclassrooms.grpc.User.Empty, com.smartclassrooms.grpc.User.APIResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "user", "logout"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartclassrooms.grpc.User.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartclassrooms.grpc.User.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new userMethodDescriptorSupplier("logout"))
-                  .build();
-          }
-        }
-     }
-     return getLogoutMethod;
+     return getRegisterMethod;
   }
 
   /**
@@ -120,34 +88,20 @@ public final class userGrpc {
 
     /**
      */
-    public void login(com.smartclassrooms.grpc.User.LoginRequest request,
+    public void register(com.smartclassrooms.grpc.User.RegisterRequest request,
         io.grpc.stub.StreamObserver<com.smartclassrooms.grpc.User.APIResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void logout(com.smartclassrooms.grpc.User.Empty request,
-        io.grpc.stub.StreamObserver<com.smartclassrooms.grpc.User.APIResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getRegisterMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getLoginMethod(),
+            getRegisterMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.smartclassrooms.grpc.User.LoginRequest,
+                com.smartclassrooms.grpc.User.RegisterRequest,
                 com.smartclassrooms.grpc.User.APIResponse>(
-                  this, METHODID_LOGIN)))
-          .addMethod(
-            getLogoutMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartclassrooms.grpc.User.Empty,
-                com.smartclassrooms.grpc.User.APIResponse>(
-                  this, METHODID_LOGOUT)))
+                  this, METHODID_REGISTER)))
           .build();
     }
   }
@@ -172,18 +126,10 @@ public final class userGrpc {
 
     /**
      */
-    public void login(com.smartclassrooms.grpc.User.LoginRequest request,
+    public void register(com.smartclassrooms.grpc.User.RegisterRequest request,
         io.grpc.stub.StreamObserver<com.smartclassrooms.grpc.User.APIResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void logout(com.smartclassrooms.grpc.User.Empty request,
-        io.grpc.stub.StreamObserver<com.smartclassrooms.grpc.User.APIResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getLogoutMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getRegisterMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -207,16 +153,9 @@ public final class userGrpc {
 
     /**
      */
-    public com.smartclassrooms.grpc.User.APIResponse login(com.smartclassrooms.grpc.User.LoginRequest request) {
+    public com.smartclassrooms.grpc.User.APIResponse register(com.smartclassrooms.grpc.User.RegisterRequest request) {
       return blockingUnaryCall(
-          getChannel(), getLoginMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.smartclassrooms.grpc.User.APIResponse logout(com.smartclassrooms.grpc.User.Empty request) {
-      return blockingUnaryCall(
-          getChannel(), getLogoutMethod(), getCallOptions(), request);
+          getChannel(), getRegisterMethod(), getCallOptions(), request);
     }
   }
 
@@ -240,23 +179,14 @@ public final class userGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartclassrooms.grpc.User.APIResponse> login(
-        com.smartclassrooms.grpc.User.LoginRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.smartclassrooms.grpc.User.APIResponse> register(
+        com.smartclassrooms.grpc.User.RegisterRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getLoginMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartclassrooms.grpc.User.APIResponse> logout(
-        com.smartclassrooms.grpc.User.Empty request) {
-      return futureUnaryCall(
-          getChannel().newCall(getLogoutMethod(), getCallOptions()), request);
+          getChannel().newCall(getRegisterMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_LOGIN = 0;
-  private static final int METHODID_LOGOUT = 1;
+  private static final int METHODID_REGISTER = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,12 +205,8 @@ public final class userGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_LOGIN:
-          serviceImpl.login((com.smartclassrooms.grpc.User.LoginRequest) request,
-              (io.grpc.stub.StreamObserver<com.smartclassrooms.grpc.User.APIResponse>) responseObserver);
-          break;
-        case METHODID_LOGOUT:
-          serviceImpl.logout((com.smartclassrooms.grpc.User.Empty) request,
+        case METHODID_REGISTER:
+          serviceImpl.register((com.smartclassrooms.grpc.User.RegisterRequest) request,
               (io.grpc.stub.StreamObserver<com.smartclassrooms.grpc.User.APIResponse>) responseObserver);
           break;
         default:
@@ -344,8 +270,7 @@ public final class userGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new userFileDescriptorSupplier())
-              .addMethod(getLoginMethod())
-              .addMethod(getLogoutMethod())
+              .addMethod(getRegisterMethod())
               .build();
         }
       }

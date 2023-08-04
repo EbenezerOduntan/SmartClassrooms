@@ -2,7 +2,7 @@ package user;
 
 import com.smartclassrooms.grpc.User.APIResponse;
 import com.smartclassrooms.grpc.User.Empty;
-import com.smartclassrooms.grpc.User.LoginRequest;
+import com.smartclassrooms.grpc.User.RegisterRequest;
 import com.smartclassrooms.grpc.userGrpc.userImplBase;
 
 import io.grpc.stub.StreamObserver;
@@ -10,7 +10,7 @@ import io.grpc.stub.StreamObserver;
 public class UserService extends userImplBase{
 
 	@Override
-	public void login(LoginRequest request, StreamObserver<APIResponse> responseObserver) {
+	public void register(RegisterRequest request, StreamObserver<APIResponse> responseObserver) {
 		
 		System.out.println("Inside login!");
 		
@@ -29,11 +29,6 @@ public class UserService extends userImplBase{
 		
 		responseObserver.onNext(response.build());
 		responseObserver.onCompleted();
-		
-	}
-
-	@Override
-	public void logout(Empty request, StreamObserver<APIResponse> responseObserver) {
 		
 	}
 	

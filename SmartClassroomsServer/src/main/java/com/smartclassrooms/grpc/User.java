@@ -14,8 +14,8 @@ public final class User {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface LoginRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:LoginRequest)
+  public interface RegisterRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RegisterRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -39,18 +39,18 @@ public final class User {
         getPasswordBytes();
   }
   /**
-   * Protobuf type {@code LoginRequest}
+   * Protobuf type {@code RegisterRequest}
    */
-  public  static final class LoginRequest extends
+  public  static final class RegisterRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:LoginRequest)
-      LoginRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:RegisterRequest)
+      RegisterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use LoginRequest.newBuilder() to construct.
-    private LoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use RegisterRequest.newBuilder() to construct.
+    private RegisterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private LoginRequest() {
+    private RegisterRequest() {
       username_ = "";
       password_ = "";
     }
@@ -60,7 +60,7 @@ public final class User {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LoginRequest(
+    private RegisterRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -112,15 +112,15 @@ public final class User {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.smartclassrooms.grpc.User.internal_static_LoginRequest_descriptor;
+      return com.smartclassrooms.grpc.User.internal_static_RegisterRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.smartclassrooms.grpc.User.internal_static_LoginRequest_fieldAccessorTable
+      return com.smartclassrooms.grpc.User.internal_static_RegisterRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.smartclassrooms.grpc.User.LoginRequest.class, com.smartclassrooms.grpc.User.LoginRequest.Builder.class);
+              com.smartclassrooms.grpc.User.RegisterRequest.class, com.smartclassrooms.grpc.User.RegisterRequest.Builder.class);
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
@@ -236,10 +236,10 @@ public final class User {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.smartclassrooms.grpc.User.LoginRequest)) {
+      if (!(obj instanceof com.smartclassrooms.grpc.User.RegisterRequest)) {
         return super.equals(obj);
       }
-      com.smartclassrooms.grpc.User.LoginRequest other = (com.smartclassrooms.grpc.User.LoginRequest) obj;
+      com.smartclassrooms.grpc.User.RegisterRequest other = (com.smartclassrooms.grpc.User.RegisterRequest) obj;
 
       boolean result = true;
       result = result && getUsername()
@@ -266,69 +266,69 @@ public final class User {
       return hash;
     }
 
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(byte[] data)
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(java.io.InputStream input)
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseDelimitedFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.smartclassrooms.grpc.User.LoginRequest parseFrom(
+    public static com.smartclassrooms.grpc.User.RegisterRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -341,7 +341,7 @@ public final class User {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.smartclassrooms.grpc.User.LoginRequest prototype) {
+    public static Builder newBuilder(com.smartclassrooms.grpc.User.RegisterRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -357,26 +357,26 @@ public final class User {
       return builder;
     }
     /**
-     * Protobuf type {@code LoginRequest}
+     * Protobuf type {@code RegisterRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:LoginRequest)
-        com.smartclassrooms.grpc.User.LoginRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:RegisterRequest)
+        com.smartclassrooms.grpc.User.RegisterRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.smartclassrooms.grpc.User.internal_static_LoginRequest_descriptor;
+        return com.smartclassrooms.grpc.User.internal_static_RegisterRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.smartclassrooms.grpc.User.internal_static_LoginRequest_fieldAccessorTable
+        return com.smartclassrooms.grpc.User.internal_static_RegisterRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.smartclassrooms.grpc.User.LoginRequest.class, com.smartclassrooms.grpc.User.LoginRequest.Builder.class);
+                com.smartclassrooms.grpc.User.RegisterRequest.class, com.smartclassrooms.grpc.User.RegisterRequest.Builder.class);
       }
 
-      // Construct using com.smartclassrooms.grpc.User.LoginRequest.newBuilder()
+      // Construct using com.smartclassrooms.grpc.User.RegisterRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -404,17 +404,17 @@ public final class User {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.smartclassrooms.grpc.User.internal_static_LoginRequest_descriptor;
+        return com.smartclassrooms.grpc.User.internal_static_RegisterRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.smartclassrooms.grpc.User.LoginRequest getDefaultInstanceForType() {
-        return com.smartclassrooms.grpc.User.LoginRequest.getDefaultInstance();
+      public com.smartclassrooms.grpc.User.RegisterRequest getDefaultInstanceForType() {
+        return com.smartclassrooms.grpc.User.RegisterRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.smartclassrooms.grpc.User.LoginRequest build() {
-        com.smartclassrooms.grpc.User.LoginRequest result = buildPartial();
+      public com.smartclassrooms.grpc.User.RegisterRequest build() {
+        com.smartclassrooms.grpc.User.RegisterRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -422,8 +422,8 @@ public final class User {
       }
 
       @java.lang.Override
-      public com.smartclassrooms.grpc.User.LoginRequest buildPartial() {
-        com.smartclassrooms.grpc.User.LoginRequest result = new com.smartclassrooms.grpc.User.LoginRequest(this);
+      public com.smartclassrooms.grpc.User.RegisterRequest buildPartial() {
+        com.smartclassrooms.grpc.User.RegisterRequest result = new com.smartclassrooms.grpc.User.RegisterRequest(this);
         result.username_ = username_;
         result.password_ = password_;
         onBuilt();
@@ -464,16 +464,16 @@ public final class User {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.smartclassrooms.grpc.User.LoginRequest) {
-          return mergeFrom((com.smartclassrooms.grpc.User.LoginRequest)other);
+        if (other instanceof com.smartclassrooms.grpc.User.RegisterRequest) {
+          return mergeFrom((com.smartclassrooms.grpc.User.RegisterRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.smartclassrooms.grpc.User.LoginRequest other) {
-        if (other == com.smartclassrooms.grpc.User.LoginRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.smartclassrooms.grpc.User.RegisterRequest other) {
+        if (other == com.smartclassrooms.grpc.User.RegisterRequest.getDefaultInstance()) return this;
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
           onChanged();
@@ -497,11 +497,11 @@ public final class User {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.smartclassrooms.grpc.User.LoginRequest parsedMessage = null;
+        com.smartclassrooms.grpc.User.RegisterRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.smartclassrooms.grpc.User.LoginRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.smartclassrooms.grpc.User.RegisterRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -661,41 +661,41 @@ public final class User {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:LoginRequest)
+      // @@protoc_insertion_point(builder_scope:RegisterRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:LoginRequest)
-    private static final com.smartclassrooms.grpc.User.LoginRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:RegisterRequest)
+    private static final com.smartclassrooms.grpc.User.RegisterRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.smartclassrooms.grpc.User.LoginRequest();
+      DEFAULT_INSTANCE = new com.smartclassrooms.grpc.User.RegisterRequest();
     }
 
-    public static com.smartclassrooms.grpc.User.LoginRequest getDefaultInstance() {
+    public static com.smartclassrooms.grpc.User.RegisterRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<LoginRequest>
-        PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
+    private static final com.google.protobuf.Parser<RegisterRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RegisterRequest>() {
       @java.lang.Override
-      public LoginRequest parsePartialFrom(
+      public RegisterRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LoginRequest(input, extensionRegistry);
+        return new RegisterRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<LoginRequest> parser() {
+    public static com.google.protobuf.Parser<RegisterRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<LoginRequest> getParserForType() {
+    public com.google.protobuf.Parser<RegisterRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.smartclassrooms.grpc.User.LoginRequest getDefaultInstanceForType() {
+    public com.smartclassrooms.grpc.User.RegisterRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1727,10 +1727,10 @@ public final class User {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_LoginRequest_descriptor;
+    internal_static_RegisterRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LoginRequest_fieldAccessorTable;
+      internal_static_RegisterRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_APIResponse_descriptor;
   private static final 
@@ -1750,13 +1750,12 @@ public final class User {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nuser.proto\"2\n\014LoginRequest\022\020\n\010username" +
-      "\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"<\n\013APIResponse\022" +
-      "\027\n\017responsemessage\030\001 \001(\t\022\024\n\014responseCode" +
-      "\030\002 \001(\005\"\007\n\005Empty2L\n\004user\022$\n\005login\022\r.Login" +
-      "Request\032\014.APIResponse\022\036\n\006logout\022\006.Empty\032" +
-      "\014.APIResponseB\032\n\030com.smartclassrooms.grp" +
-      "cb\006proto3"
+      "\n\nuser.proto\"5\n\017RegisterRequest\022\020\n\010usern" +
+      "ame\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"<\n\013APIRespon" +
+      "se\022\027\n\017responsemessage\030\001 \001(\t\022\024\n\014responseC" +
+      "ode\030\002 \001(\005\"\007\n\005Empty22\n\004user\022*\n\010register\022\020" +
+      ".RegisterRequest\032\014.APIResponseB\032\n\030com.sm" +
+      "artclassrooms.grpcb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1770,11 +1769,11 @@ public final class User {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_LoginRequest_descriptor =
+    internal_static_RegisterRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_LoginRequest_fieldAccessorTable = new
+    internal_static_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LoginRequest_descriptor,
+        internal_static_RegisterRequest_descriptor,
         new java.lang.String[] { "Username", "Password", });
     internal_static_APIResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
