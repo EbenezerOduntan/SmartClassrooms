@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_package  = "com.smartclassrooms.grpc";
+
+service exam {
+	
+	rpc assignmentSubmission(stream Assignment) returns (SubmissionConfirmation) {}
+	
+	rpc getGrades(StudentRequest) returns (stream Grade) {}
+	
+}
+
+message Assignment {
+	string username = 1;
+	string coursename = 2;
+}
+
+message SubmissionConfirmation {
+	string submissionresponse = 1;
+	int32 responseCode = 2;
+}
+
+message StudentRequest {
+	string username = 1;
+}
+
+message Grade {
+	string grade = 1;
+	string comment = 2;
+}
+
+
+message RegisterRequest { 
+	string username = 1;
+	string password = 2;
+}
