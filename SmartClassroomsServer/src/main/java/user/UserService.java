@@ -1,9 +1,13 @@
 package user;
 
+import java.io.IOException;
+
 import com.smartclassrooms.grpc.User.APIResponse;
 import com.smartclassrooms.grpc.User.RegisterRequest;
 import com.smartclassrooms.grpc.userGrpc.userImplBase;
 
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
 public class UserService extends userImplBase{
@@ -11,7 +15,7 @@ public class UserService extends userImplBase{
 	@Override
 	public void register(RegisterRequest request, StreamObserver<APIResponse> responseObserver) {
 		
-		System.out.println("Inside login!");
+		System.out.println("Registering...");
 		
 		String username = request.getUsername();
 		String password = request.getPassword();

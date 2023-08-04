@@ -51,26 +51,28 @@ public class ControllerGUI implements ActionListener{
 		panel.add(entry2);
 		panel.add(Box.createRigidArea(new Dimension(10, 0)));
 
-		JButton button = new JButton("Register");
-		button.addActionListener(this);
-		panel.add(button);
+		JButton button1 = new JButton("Register");
+		button1.addActionListener(this);
+		panel.add(button1);
 		panel.add(Box.createRigidArea(new Dimension(10, 0)));
 
 		reply1 = new JTextField("", 10);
 		reply1.setEditable(false);
 		panel.add(reply1);
 
+		JPanel nextButtonRow = new JPanel();
+		nextButtonRow.setLayout(new BoxLayout(nextButtonRow, BoxLayout.Y_AXIS));
+		
+		JButton button2 = new JButton("Assignment Submission");
+		button2.addActionListener(this);
+		nextButtonRow.add(button2);
+		
+		panel.add(nextButtonRow);
+		
 		panel.setLayout(boxlayout);
 
 		return panel;
 
-	}
-
-	public static void main(String[] args) {
-
-		ControllerGUI gui = new ControllerGUI();
-
-		gui.build();
 	}
 
 	public void build() { 
@@ -126,12 +128,16 @@ public class ControllerGUI implements ActionListener{
 			APIResponse response = userStub.register(registerrequest);
 			userStub = MetadataUtils.attachHeaders(userStub, metadata);
 
+			System.out.println(response.getResponsemessage());
 			reply1.setText( String.valueOf( response.getResponsemessage()));
 			
-			System.out.println(response.getResponsemessage());
 			
 			channel.shutdown();
 		
+		} else if(label.equals("Assignment Submission")) {
+			// Assignment Submission Client Streaming 
+			
+			// Grade Server Streaming
 		}
 
 	}

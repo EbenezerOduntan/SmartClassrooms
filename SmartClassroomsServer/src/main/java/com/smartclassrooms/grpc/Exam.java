@@ -1869,24 +1869,19 @@ public final class Exam {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string grade = 1;</code>
+     * <code>int32 grade = 1;</code>
      */
-    java.lang.String getGrade();
-    /**
-     * <code>string grade = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getGradeBytes();
+    int getGrade();
 
     /**
-     * <code>string comment = 2;</code>
+     * <code>string assignmentname = 2;</code>
      */
-    java.lang.String getComment();
+    java.lang.String getAssignmentname();
     /**
-     * <code>string comment = 2;</code>
+     * <code>string assignmentname = 2;</code>
      */
     com.google.protobuf.ByteString
-        getCommentBytes();
+        getAssignmentnameBytes();
   }
   /**
    * Protobuf type {@code Grade}
@@ -1901,8 +1896,8 @@ public final class Exam {
       super(builder);
     }
     private Grade() {
-      grade_ = "";
-      comment_ = "";
+      grade_ = 0;
+      assignmentname_ = "";
     }
 
     @java.lang.Override
@@ -1929,16 +1924,15 @@ public final class Exam {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              grade_ = s;
+              grade_ = input.readInt32();
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              comment_ = s;
+              assignmentname_ = s;
               break;
             }
             default: {
@@ -1974,67 +1968,42 @@ public final class Exam {
     }
 
     public static final int GRADE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object grade_;
+    private int grade_;
     /**
-     * <code>string grade = 1;</code>
+     * <code>int32 grade = 1;</code>
      */
-    public java.lang.String getGrade() {
-      java.lang.Object ref = grade_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        grade_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string grade = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getGradeBytes() {
-      java.lang.Object ref = grade_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        grade_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getGrade() {
+      return grade_;
     }
 
-    public static final int COMMENT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object comment_;
+    public static final int ASSIGNMENTNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object assignmentname_;
     /**
-     * <code>string comment = 2;</code>
+     * <code>string assignmentname = 2;</code>
      */
-    public java.lang.String getComment() {
-      java.lang.Object ref = comment_;
+    public java.lang.String getAssignmentname() {
+      java.lang.Object ref = assignmentname_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        comment_ = s;
+        assignmentname_ = s;
         return s;
       }
     }
     /**
-     * <code>string comment = 2;</code>
+     * <code>string assignmentname = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getCommentBytes() {
-      java.lang.Object ref = comment_;
+        getAssignmentnameBytes() {
+      java.lang.Object ref = assignmentname_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        comment_ = b;
+        assignmentname_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2055,11 +2024,11 @@ public final class Exam {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getGradeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, grade_);
+      if (grade_ != 0) {
+        output.writeInt32(1, grade_);
       }
-      if (!getCommentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, comment_);
+      if (!getAssignmentnameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, assignmentname_);
       }
       unknownFields.writeTo(output);
     }
@@ -2070,11 +2039,12 @@ public final class Exam {
       if (size != -1) return size;
 
       size = 0;
-      if (!getGradeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, grade_);
+      if (grade_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, grade_);
       }
-      if (!getCommentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, comment_);
+      if (!getAssignmentnameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, assignmentname_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2092,10 +2062,10 @@ public final class Exam {
       com.smartclassrooms.grpc.Exam.Grade other = (com.smartclassrooms.grpc.Exam.Grade) obj;
 
       boolean result = true;
-      result = result && getGrade()
-          .equals(other.getGrade());
-      result = result && getComment()
-          .equals(other.getComment());
+      result = result && (getGrade()
+          == other.getGrade());
+      result = result && getAssignmentname()
+          .equals(other.getAssignmentname());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2108,9 +2078,9 @@ public final class Exam {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GRADE_FIELD_NUMBER;
-      hash = (53 * hash) + getGrade().hashCode();
-      hash = (37 * hash) + COMMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getComment().hashCode();
+      hash = (53 * hash) + getGrade();
+      hash = (37 * hash) + ASSIGNMENTNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAssignmentname().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2244,9 +2214,9 @@ public final class Exam {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        grade_ = "";
+        grade_ = 0;
 
-        comment_ = "";
+        assignmentname_ = "";
 
         return this;
       }
@@ -2275,7 +2245,7 @@ public final class Exam {
       public com.smartclassrooms.grpc.Exam.Grade buildPartial() {
         com.smartclassrooms.grpc.Exam.Grade result = new com.smartclassrooms.grpc.Exam.Grade(this);
         result.grade_ = grade_;
-        result.comment_ = comment_;
+        result.assignmentname_ = assignmentname_;
         onBuilt();
         return result;
       }
@@ -2324,12 +2294,11 @@ public final class Exam {
 
       public Builder mergeFrom(com.smartclassrooms.grpc.Exam.Grade other) {
         if (other == com.smartclassrooms.grpc.Exam.Grade.getDefaultInstance()) return this;
-        if (!other.getGrade().isEmpty()) {
-          grade_ = other.grade_;
-          onChanged();
+        if (other.getGrade() != 0) {
+          setGrade(other.getGrade());
         }
-        if (!other.getComment().isEmpty()) {
-          comment_ = other.comment_;
+        if (!other.getAssignmentname().isEmpty()) {
+          assignmentname_ = other.assignmentname_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2361,140 +2330,97 @@ public final class Exam {
         return this;
       }
 
-      private java.lang.Object grade_ = "";
+      private int grade_ ;
       /**
-       * <code>string grade = 1;</code>
+       * <code>int32 grade = 1;</code>
        */
-      public java.lang.String getGrade() {
-        java.lang.Object ref = grade_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          grade_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getGrade() {
+        return grade_;
       }
       /**
-       * <code>string grade = 1;</code>
+       * <code>int32 grade = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getGradeBytes() {
-        java.lang.Object ref = grade_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          grade_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string grade = 1;</code>
-       */
-      public Builder setGrade(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setGrade(int value) {
+        
         grade_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string grade = 1;</code>
+       * <code>int32 grade = 1;</code>
        */
       public Builder clearGrade() {
         
-        grade_ = getDefaultInstance().getGrade();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string grade = 1;</code>
-       */
-      public Builder setGradeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        grade_ = value;
+        grade_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object comment_ = "";
+      private java.lang.Object assignmentname_ = "";
       /**
-       * <code>string comment = 2;</code>
+       * <code>string assignmentname = 2;</code>
        */
-      public java.lang.String getComment() {
-        java.lang.Object ref = comment_;
+      public java.lang.String getAssignmentname() {
+        java.lang.Object ref = assignmentname_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          comment_ = s;
+          assignmentname_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string comment = 2;</code>
+       * <code>string assignmentname = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getCommentBytes() {
-        java.lang.Object ref = comment_;
+          getAssignmentnameBytes() {
+        java.lang.Object ref = assignmentname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          comment_ = b;
+          assignmentname_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string comment = 2;</code>
+       * <code>string assignmentname = 2;</code>
        */
-      public Builder setComment(
+      public Builder setAssignmentname(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        comment_ = value;
+        assignmentname_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string comment = 2;</code>
+       * <code>string assignmentname = 2;</code>
        */
-      public Builder clearComment() {
+      public Builder clearAssignmentname() {
         
-        comment_ = getDefaultInstance().getComment();
+        assignmentname_ = getDefaultInstance().getAssignmentname();
         onChanged();
         return this;
       }
       /**
-       * <code>string comment = 2;</code>
+       * <code>string assignmentname = 2;</code>
        */
-      public Builder setCommentBytes(
+      public Builder setAssignmentnameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        comment_ = value;
+        assignmentname_ = value;
         onChanged();
         return this;
       }
@@ -2584,12 +2510,12 @@ public final class Exam {
       " \001(\t\022\022\n\ncoursename\030\002 \001(\t\"J\n\026SubmissionCo" +
       "nfirmation\022\032\n\022submissionresponse\030\001 \001(\t\022\024" +
       "\n\014responseCode\030\002 \001(\005\"\"\n\016StudentRequest\022\020" +
-      "\n\010username\030\001 \001(\t\"\'\n\005Grade\022\r\n\005grade\030\001 \001(\t" +
-      "\022\017\n\007comment\030\002 \001(\t2r\n\004exam\022@\n\024assignmentS" +
-      "ubmission\022\013.Assignment\032\027.SubmissionConfi" +
-      "rmation\"\000(\001\022(\n\tgetGrades\022\017.StudentReques" +
-      "t\032\006.Grade\"\0000\001B\032\n\030com.smartclassrooms.grp" +
-      "cb\006proto3"
+      "\n\010username\030\001 \001(\t\".\n\005Grade\022\r\n\005grade\030\001 \001(\005" +
+      "\022\026\n\016assignmentname\030\002 \001(\t2r\n\004exam\022@\n\024assi" +
+      "gnmentSubmission\022\013.Assignment\032\027.Submissi" +
+      "onConfirmation\"\000(\001\022(\n\tgetGrades\022\017.Studen" +
+      "tRequest\032\006.Grade\"\0000\001B\032\n\030com.smartclassro" +
+      "oms.grpcb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2626,7 +2552,7 @@ public final class Exam {
     internal_static_Grade_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Grade_descriptor,
-        new java.lang.String[] { "Grade", "Comment", });
+        new java.lang.String[] { "Grade", "Assignmentname", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

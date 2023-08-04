@@ -16,6 +16,7 @@ com\smartclassrooms\grpc\Exam$Grade$Builder.class
 com\smartclassrooms\grpc\qandaGrpc$qandaImplBase.class
 com\smartclassrooms\grpc\examGrpc.class
 com\smartclassrooms\grpc\examGrpc$examMethodDescriptorSupplier.class
+exam\ExamService$1.class
 user\UserService.class
 com\smartclassrooms\grpc\Qanda$Question$1.class
 com\smartclassrooms\grpc\User$APIResponse$Builder.class
@@ -51,6 +52,7 @@ com\smartclassrooms\grpc\examGrpc$examFutureStub.class
 com\smartclassrooms\grpc\userGrpc.class
 com\smartclassrooms\grpc\Exam$SubmissionConfirmation.class
 com\smartclassrooms\grpc\userGrpc$userMethodDescriptorSupplier.class
+exam\ExamService.class
 com\smartclassrooms\grpc\Qanda$Answer.class
 com\smartclassrooms\grpc\User$APIResponse$1.class
 com\smartclassrooms\grpc\examGrpc$examBaseDescriptorSupplier.class

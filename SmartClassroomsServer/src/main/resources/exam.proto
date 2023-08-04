@@ -25,6 +25,6 @@ message StudentRequest {
 }
 
 message Grade {
-	string grade = 1;
-	string comment = 2;
+	int32 grade = 1;
+	string assignmentname = 2;
 }
