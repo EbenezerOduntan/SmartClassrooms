@@ -2,9 +2,9 @@ package user;
 
 import java.io.IOException;
 
-import com.smartclassrooms.grpc.User.APIResponse;
-import com.smartclassrooms.grpc.User.RegisterRequest;
-import com.smartclassrooms.grpc.userGrpc.userImplBase;
+import com.smartclassrooms.grpc.user.APIResponse;
+import com.smartclassrooms.grpc.user.RegisterRequest;
+import com.smartclassrooms.grpc.user.userGrpc.userImplBase;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;

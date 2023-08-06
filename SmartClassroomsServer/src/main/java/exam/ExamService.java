@@ -1,10 +1,10 @@
 package exam;
 
-import com.smartclassrooms.grpc.Exam.Assignment;
-import com.smartclassrooms.grpc.Exam.SubmissionConfirmation;
-import com.smartclassrooms.grpc.Exam.StudentRequest;
-import com.smartclassrooms.grpc.Exam.Grade;
-import com.smartclassrooms.grpc.examGrpc.examImplBase;
+import com.smartclassrooms.grpc.exam.Assignment;
+import com.smartclassrooms.grpc.exam.SubmissionConfirmation;
+import com.smartclassrooms.grpc.exam.StudentRequest;
+import com.smartclassrooms.grpc.exam.Grade;
+import com.smartclassrooms.grpc.exam.examGrpc.examImplBase;
 
 import io.grpc.stub.StreamObserver;
 

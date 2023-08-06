@@ -14,10 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.smartclassrooms.grpc.User.APIResponse;
-import com.smartclassrooms.grpc.User.RegisterRequest;
-import com.smartclassrooms.grpc.userGrpc;
-import com.smartclassrooms.grpc.userGrpc.userBlockingStub;
+import com.smartclassrooms.grcp.User.APIResponse;
+import com.smartclassrooms.grcp.User.RegisterRequest;
+import com.smartclassrooms.grcp.userGrpc;
+import com.smartclassrooms.grcp.userGrpc.userBlockingStub;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
