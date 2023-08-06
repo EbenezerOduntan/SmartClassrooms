@@ -8,12 +8,22 @@ public interface QuestionOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string request = 1;</code>
+   * <code>string username = 1;</code>
    */
-  java.lang.String getRequest();
+  java.lang.String getUsername();
   /**
-   * <code>string request = 1;</code>
+   * <code>string username = 1;</code>
    */
   com.google.protobuf.ByteString
-      getRequestBytes();
+      getUsernameBytes();
+
+  /**
+   * <code>string question_text = 2;</code>
+   */
+  java.lang.String getQuestionText();
+  /**
+   * <code>string question_text = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getQuestionTextBytes();
 }

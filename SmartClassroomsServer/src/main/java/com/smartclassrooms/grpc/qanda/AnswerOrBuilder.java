@@ -8,12 +8,22 @@ public interface AnswerOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string response = 1;</code>
+   * <code>string username = 1;</code>
    */
-  java.lang.String getResponse();
+  java.lang.String getUsername();
   /**
-   * <code>string response = 1;</code>
+   * <code>string username = 1;</code>
    */
   com.google.protobuf.ByteString
-      getResponseBytes();
+      getUsernameBytes();
+
+  /**
+   * <code>string answer_text = 2;</code>
+   */
+  java.lang.String getAnswerText();
+  /**
+   * <code>string answer_text = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getAnswerTextBytes();
 }

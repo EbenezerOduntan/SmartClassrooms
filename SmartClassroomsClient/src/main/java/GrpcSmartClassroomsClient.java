@@ -3,6 +3,6 @@ public class GrpcSmartClassroomsClient {
 
 		ControllerGUI gui = new ControllerGUI();
 
-		gui.build();
+		gui.build(1);
 	}
 }

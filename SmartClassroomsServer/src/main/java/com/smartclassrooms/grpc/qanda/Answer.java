@@ -16,7 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Answer() {
-    response_ = "";
+    username_ = "";
+    answerText_ = "";
   }
 
   @java.lang.Override
@@ -46,7 +47,13 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            response_ = s;
+            username_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            answerText_ = s;
             break;
           }
           default: {
@@ -81,34 +88,68 @@ private static final long serialVersionUID = 0L;
             com.smartclassrooms.grpc.qanda.Answer.class, com.smartclassrooms.grpc.qanda.Answer.Builder.class);
   }
 
-  public static final int RESPONSE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object response_;
+  public static final int USERNAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object username_;
   /**
-   * <code>string response = 1;</code>
+   * <code>string username = 1;</code>
    */
-  public java.lang.String getResponse() {
-    java.lang.Object ref = response_;
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      response_ = s;
+      username_ = s;
       return s;
     }
   }
   /**
-   * <code>string response = 1;</code>
+   * <code>string username = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getResponseBytes() {
-    java.lang.Object ref = response_;
+      getUsernameBytes() {
+    java.lang.Object ref = username_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      response_ = b;
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ANSWER_TEXT_FIELD_NUMBER = 2;
+  private volatile java.lang.Object answerText_;
+  /**
+   * <code>string answer_text = 2;</code>
+   */
+  public java.lang.String getAnswerText() {
+    java.lang.Object ref = answerText_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      answerText_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string answer_text = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getAnswerTextBytes() {
+    java.lang.Object ref = answerText_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      answerText_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +170,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getResponseBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, response_);
+    if (!getUsernameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+    }
+    if (!getAnswerTextBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, answerText_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +185,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResponseBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, response_);
+    if (!getUsernameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+    }
+    if (!getAnswerTextBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, answerText_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -160,8 +207,10 @@ private static final long serialVersionUID = 0L;
     com.smartclassrooms.grpc.qanda.Answer other = (com.smartclassrooms.grpc.qanda.Answer) obj;
 
     boolean result = true;
-    result = result && getResponse()
-        .equals(other.getResponse());
+    result = result && getUsername()
+        .equals(other.getUsername());
+    result = result && getAnswerText()
+        .equals(other.getAnswerText());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,8 +222,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
-    hash = (53 * hash) + getResponse().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUsername().hashCode();
+    hash = (37 * hash) + ANSWER_TEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getAnswerText().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -308,7 +359,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      response_ = "";
+      username_ = "";
+
+      answerText_ = "";
 
       return this;
     }
@@ -336,7 +389,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.smartclassrooms.grpc.qanda.Answer buildPartial() {
       com.smartclassrooms.grpc.qanda.Answer result = new com.smartclassrooms.grpc.qanda.Answer(this);
-      result.response_ = response_;
+      result.username_ = username_;
+      result.answerText_ = answerText_;
       onBuilt();
       return result;
     }
@@ -385,8 +439,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.smartclassrooms.grpc.qanda.Answer other) {
       if (other == com.smartclassrooms.grpc.qanda.Answer.getDefaultInstance()) return this;
-      if (!other.getResponse().isEmpty()) {
-        response_ = other.response_;
+      if (!other.getUsername().isEmpty()) {
+        username_ = other.username_;
+        onChanged();
+      }
+      if (!other.getAnswerText().isEmpty()) {
+        answerText_ = other.answerText_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -418,71 +476,140 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object response_ = "";
+    private java.lang.Object username_ = "";
     /**
-     * <code>string response = 1;</code>
+     * <code>string username = 1;</code>
      */
-    public java.lang.String getResponse() {
-      java.lang.Object ref = response_;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        response_ = s;
+        username_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string response = 1;</code>
+     * <code>string username = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getResponseBytes() {
-      java.lang.Object ref = response_;
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        response_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string response = 1;</code>
+     * <code>string username = 1;</code>
      */
-    public Builder setResponse(
+    public Builder setUsername(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      response_ = value;
+      username_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string response = 1;</code>
+     * <code>string username = 1;</code>
      */
-    public Builder clearResponse() {
+    public Builder clearUsername() {
       
-      response_ = getDefaultInstance().getResponse();
+      username_ = getDefaultInstance().getUsername();
       onChanged();
       return this;
     }
     /**
-     * <code>string response = 1;</code>
+     * <code>string username = 1;</code>
      */
-    public Builder setResponseBytes(
+    public Builder setUsernameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      response_ = value;
+      username_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object answerText_ = "";
+    /**
+     * <code>string answer_text = 2;</code>
+     */
+    public java.lang.String getAnswerText() {
+      java.lang.Object ref = answerText_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        answerText_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string answer_text = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAnswerTextBytes() {
+      java.lang.Object ref = answerText_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        answerText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string answer_text = 2;</code>
+     */
+    public Builder setAnswerText(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      answerText_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string answer_text = 2;</code>
+     */
+    public Builder clearAnswerText() {
+      
+      answerText_ = getDefaultInstance().getAnswerText();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string answer_text = 2;</code>
+     */
+    public Builder setAnswerTextBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      answerText_ = value;
       onChanged();
       return this;
     }

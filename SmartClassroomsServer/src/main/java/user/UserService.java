@@ -1,13 +1,9 @@
 package user;
 
-import java.io.IOException;
-
 import com.smartclassrooms.grpc.user.APIResponse;
 import com.smartclassrooms.grpc.user.RegisterRequest;
 import com.smartclassrooms.grpc.user.userGrpc.userImplBase;
 
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
 public class UserService extends userImplBase{

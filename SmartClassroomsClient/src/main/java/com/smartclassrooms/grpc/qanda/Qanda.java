@@ -33,10 +33,12 @@ public final class Qanda {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013qanda.proto\"\033\n\010Question\022\017\n\007request\030\001 \001" +
-      "(\t\"\032\n\006Answer\022\020\n\010response\030\001 \001(\t2,\n\005qanda\022" +
-      "#\n\tliveQandA\022\t.Question\032\007.Answer(\0010\001B\"\n\036" +
-      "com.smartclassrooms.grpc.qandaP\001b\006proto3"
+      "\n\013qanda.proto\"3\n\010Question\022\020\n\010username\030\001 " +
+      "\001(\t\022\025\n\rquestion_text\030\002 \001(\t\"/\n\006Answer\022\020\n\010" +
+      "username\030\001 \001(\t\022\023\n\013answer_text\030\002 \001(\t2,\n\005q" +
+      "anda\022#\n\tliveQandA\022\t.Question\032\007.Answer(\0010" +
+      "\001B\"\n\036com.smartclassrooms.grpc.qandaP\001b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -55,13 +57,13 @@ public final class Qanda {
     internal_static_Question_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Question_descriptor,
-        new java.lang.String[] { "Request", });
+        new java.lang.String[] { "Username", "QuestionText", });
     internal_static_Answer_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Answer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Answer_descriptor,
-        new java.lang.String[] { "Response", });
+        new java.lang.String[] { "Username", "AnswerText", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

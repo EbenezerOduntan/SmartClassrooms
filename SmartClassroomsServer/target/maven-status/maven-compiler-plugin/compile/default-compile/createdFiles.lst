@@ -18,6 +18,7 @@ user\UserService.class
 com\smartclassrooms\grpc\exam\examGrpc$examFutureStub.class
 com\smartclassrooms\grpc\user\RegisterRequest.class
 com\smartclassrooms\grpc\qanda\Answer$1.class
+qanda\QandAService.class
 com\smartclassrooms\grpc\qanda\qandaGrpc$qandaFileDescriptorSupplier.class
 com\smartclassrooms\grpc\qanda\QuestionOrBuilder.class
 com\smartclassrooms\grpc\user\User$1.class
@@ -61,6 +62,7 @@ com\smartclassrooms\grpc\user\RegisterRequestOrBuilder.class
 com\smartclassrooms\grpc\exam\examGrpc$examImplBase.class
 com\smartclassrooms\grpc\qanda\AnswerOrBuilder.class
 com\smartclassrooms\grpc\user\userGrpc.class
+qanda\QandAService$1.class
 com\smartclassrooms\grpc\exam\Exam.class
 com\smartclassrooms\grpc\qanda\qandaGrpc$qandaMethodDescriptorSupplier.class
 com\smartclassrooms\grpc\user\userGrpc$userImplBase.class
