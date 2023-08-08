@@ -13,15 +13,15 @@ public class QandAService extends qandaImplBase {
                 @Override
                 public void onNext(Question question) {
                     // Your server-side logic to handle the incoming question
-                    String studentId = question.getUsername();
+                    String username = question.getUsername();
                     String questionText = question.getQuestionText();
 
                     // Here you can process the question and prepare an answer
-                    String teacherId = "T001";
+                    String teacher_username = "T001";
                     String answerText = "Answering your question: " + questionText;
 
                     Answer answer = Answer.newBuilder()
-                            .setUsername(teacherId)
+                            .setUsername(teacher_username)
                             .setAnswerText(answerText)
                             .build();
 

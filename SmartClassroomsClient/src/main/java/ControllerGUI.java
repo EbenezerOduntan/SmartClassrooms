@@ -70,7 +70,8 @@ public class ControllerGUI implements ActionListener{
 		reply1.setEditable(false);
 		panel.add(reply1);
 
-		JPanel nextButtonRow = new JPanel();
+			
+	JPanel nextButtonRow = new JPanel();
 		nextButtonRow.setLayout(new BoxLayout(nextButtonRow, BoxLayout.Y_AXIS));
 		
 		JButton button2 = new JButton("Assignment Submission");
@@ -78,7 +79,6 @@ public class ControllerGUI implements ActionListener{
 		nextButtonRow.add(button2);
 		
 		panel.add(nextButtonRow);
-		
 		panel.setLayout(boxlayout);
 
 		return panel;
@@ -123,6 +123,36 @@ public class ControllerGUI implements ActionListener{
 		
 		panel.add(nextButtonRow);
 		
+		panel.setLayout(boxlayout);
+		
+		// grades
+
+
+		JLabel label3 = new JLabel("Enter Username")	;
+		panel.add(label3);
+		panel.add(Box.createRigidArea(new Dimension(10, 0)));
+		entry1 = new JTextField("",10);
+		panel.add(entry1);
+		panel.add(Box.createRigidArea(new Dimension(10, 0)));
+
+		JButton button3 = new JButton("Request Grades");
+		button3.addActionListener(this);
+		panel.add(button3);
+		panel.add(Box.createRigidArea(new Dimension(10, 0)));
+
+		reply3 = new JTextField("", 10);
+		reply3.setEditable(false);
+		panel.add(reply3);
+
+			
+	JPanel nextButtonRow2 = new JPanel();
+		nextButtonRow2.setLayout(new BoxLayout(nextButtonRow, BoxLayout.Y_AXIS));
+		
+		JButton button4 = new JButton("Go to Q and A");
+		button4.addActionListener(this);
+		nextButtonRow.add(button4);
+		
+		panel.add(nextButtonRow);
 		panel.setLayout(boxlayout);
 
 		return panel;
@@ -194,6 +224,8 @@ public class ControllerGUI implements ActionListener{
 		} else if(label.equals("Assignment Submission")) {
 			build(2);
 		} else if(label.equals("Submit Assignment")){
+			System.out.println("service 2 to be invoked ...");
+
 			// Assignment Submission Client Streaming 
 			ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9091) // Replace with server details
 	                .usePlaintext() // For simplicity, we use plaintext (non-encrypted) connection
@@ -225,6 +257,7 @@ public class ControllerGUI implements ActionListener{
 	        			System.out.println("I corrected the " + entry4.getText());
 
 	        try {
+	        	
 	        	// Simulate sending three assignment
 		            Assignment submission = Assignment.newBuilder()
 		                    .setUsername(entry3.getText())
